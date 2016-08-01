@@ -2,5 +2,5 @@
     "appSecret": "66a0071bfa47a306f6d8af24b1679140",
     "pageAccessToken": "EAAP7CUM7ZAVwBAP7mr6yncQO7We1qjhSPLtP2NR8BkVYyOZB0POhOhbZCn5TjlZCE4q8kZBjLwVpQFTbxTG2trPcO3QYTF56w8GOO0IsiBZBrEimDszkwq2sgZC3ByBRiKFyzfcvT0ZAUm4ljkYF9ZBZBZCVQuhxdLWP737UfZAd218n1gZDZD",
     "validationToken": "1234",
-    "serverURL": "http://84.104.132.229:5000"
+    "serverURL": "https://facebook-sample-bot.herokuapp.com/"
 }
