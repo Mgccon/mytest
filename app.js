@@ -88,7 +88,7 @@ app.post('/webhook', function (req, res) {
     // Iterate over each entry
     // There may be multiple if batched
 
-    console.log("MYBODY:" + JSON.stringify(data));
+    console.log("MYBODY:" + stringify(data));
     data.entry.forEach(function(pageEntry) {
       var pageID = pageEntry.id;
       var timeOfEvent = pageEntry.time;
@@ -521,17 +521,43 @@ function sendFileMessage(recipientId) {
  *
  */
 function sendTextMessage(recipientId, messageText) {
-  var messageData = {
-    recipient: {
-      id: recipientId
-    },
-    message: {
-      text: messageText,
-      metadata: "DEVELOPER_DEFINED_METADATA"
-    }
-  };
 
-  callSendAPI(messageData);
+  https.get({
+      host: 'api.icndb.com',
+      path: '/jokes/random'
+  }, function(response) {
+      // Continuously update stream with data
+      var body = '';
+      response.on('data', function(d) {
+
+          body += d;
+
+      });
+      response.on('end', function() {
+
+        var jsonbody = JSON.parse(body);
+
+        console.log('body' + jsonbody.value.joke );
+         res.send(jsonbody.value.joke);
+
+         var messageData = {
+           recipient: {
+             id: recipientId
+           },
+           message: {
+             text: jsonbody.value.joke,
+             metadata: "DEVELOPER_DEFINED_METADATA"
+           }
+         };
+
+         callSendAPI(messageData);
+
+      });
+  });
+
+
+
+
 }
 
 /*
