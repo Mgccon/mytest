@@ -88,7 +88,7 @@ app.post('/webhook', function (req, res) {
     // Iterate over each entry
     // There may be multiple if batched
 
-    
+
     data.entry.forEach(function(pageEntry) {
       var pageID = pageEntry.id;
       var timeOfEvent = pageEntry.time;
@@ -538,7 +538,7 @@ function sendTextMessage(recipientId, messageText) {
         var jsonbody = JSON.parse(body);
 
         console.log('body' + jsonbody.value.joke );
-         res.send(jsonbody.value.joke);
+         
 
          var messageData = {
            recipient: {
