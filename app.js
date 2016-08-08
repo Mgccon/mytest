@@ -551,7 +551,7 @@ function sendTextMessage(recipientId, messageText) {
          };
          sendTypingOff(recipientId);
          //callSendAPI(messageData);
-         sendButtonMessage(recipientId, 'joke');
+         sendButtonMessage(recipientId, jsonbody.value.joke);
 
       });
   });
