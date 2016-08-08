@@ -569,7 +569,7 @@ function sendButtonMessage(recipientId) {
     recipient: {
       id: recipientId
     },
-    message: {
+    /*message: {
       attachment: {
         type: "template",
         payload: {
@@ -589,6 +589,13 @@ function sendButtonMessage(recipientId) {
             payload: "+16505551234"
           }]
         }
+      }
+    }*/
+    message: {
+      {
+        type: "Joke",
+        title: "Trigger Postback",
+        payload: "DEVELOPED_DEFINED_PAYLOAD"
       }
     }
   };
