@@ -593,8 +593,8 @@ function sendButtonMessage(recipientId) {
     }*/
     message: {
       {
-        type: "Joke",
-        title: "Trigger Postback",
+        type: "postback",
+        title: "New Joke",
         payload: "DEVELOPED_DEFINED_PAYLOAD"
       }
     }
