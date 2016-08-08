@@ -521,7 +521,7 @@ function sendFileMessage(recipientId) {
  *
  */
 function sendTextMessage(recipientId, messageText) {
-  	sendTypingOn(senderID);
+  	sendTypingOn(recipientId);
   https.get({
       host: 'api.icndb.com',
       path: '/jokes/random'
@@ -549,7 +549,7 @@ function sendTextMessage(recipientId, messageText) {
              metadata: "DEVELOPER_DEFINED_METADATA"
            }
          };
-         sendTypingOff(senderID);
+         sendTypingOff(recipientId);
          callSendAPI(messageData);
 
       });
