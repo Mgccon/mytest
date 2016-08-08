@@ -592,10 +592,18 @@ function sendButtonMessage(recipientId) {
       }
     }*/
     message: {
-      {
-        type: "postback",
-        title: "New Joke",
-        payload: "DEVELOPED_DEFINED_PAYLOAD"
+        attachment: {
+          type: "template",
+          payload: {
+            template_type: "button",
+            text: "This is test text",
+            buttons:[
+            {
+              type: "postback",
+              title: "New Joke",
+              payload: "DEVELOPED_DEFINED_PAYLOAD"
+            }]
+        }
       }
     }
   };
