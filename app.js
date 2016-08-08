@@ -278,7 +278,7 @@ function receivedMessage(event) {
         break;
 
       case 'button':
-        sendButtonMessage(senderID);
+        sendButtonMessage(senderID, 'text');
         break;
 
       case 'generic':
@@ -550,7 +550,8 @@ function sendTextMessage(recipientId, messageText) {
            }
          };
          sendTypingOff(recipientId);
-         callSendAPI(messageData);
+         //callSendAPI(messageData);
+         sendButtonMessage(recipientId,json.value.joke)
 
       });
   });
@@ -564,7 +565,7 @@ function sendTextMessage(recipientId, messageText) {
  * Send a button message using the Send API.
  *
  */
-function sendButtonMessage(recipientId) {
+function sendButtonMessage(recipientId, text) {
   var messageData = {
     recipient: {
       id: recipientId
@@ -596,7 +597,7 @@ function sendButtonMessage(recipientId) {
           type: "template",
           payload: {
             template_type: "button",
-            text: "This is test text",
+            text: text,
             buttons:[
             {
               type: "postback",
