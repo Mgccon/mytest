@@ -551,7 +551,7 @@ function sendTextMessage(recipientId, messageText) {
          };
          sendTypingOff(recipientId);
          //callSendAPI(messageData);
-         sendButtonMessage(recipientId,JSON.stringify(json.value.joke))
+         sendButtonMessage(recipientId , JSON.stringify(json.value.joke));
 
       });
   });
@@ -565,7 +565,7 @@ function sendTextMessage(recipientId, messageText) {
  * Send a button message using the Send API.
  *
  */
-function sendButtonMessage(recipientId, text) {
+function sendButtonMessage(recipientId, messageText) {
   var messageData = {
     recipient: {
       id: recipientId
@@ -597,7 +597,7 @@ function sendButtonMessage(recipientId, text) {
           type: "template",
           payload: {
             template_type: "button",
-            text: text,
+            text: messageText,
             buttons:[
             {
               type: "postback",
